@@ -10,7 +10,7 @@ Basata su **paper accademico UAE**
 **Renewable energy and cryptocurrency: A dual approach to economic viability and environmental sustainability**
 **[Ali Hakimi, Mohammad-Mahdi Pazuki, Mohsen Salimi, Majid Amidpour]**
 
-[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://pv-mining-sim.streamlit.app)
 
 ## Risultati Chiave simulatore
 
