@@ -1,11 +1,11 @@
 # PV vs Bitcoin Mining Simulator
 
-**Web App Streamlit open-source** per simulare **25 anni (2020-2045)** il confronto economico/ambientale tra:
+**Web App Streamlit open-source** per simulare in **25 anni (2020-2045)** il confronto economico/ambientale tra:
 
 - **Vendita energia FV 50.91 MWp alla rete**
 - **Mining Bitcoin** con stessa energia
 
-Basata su **paper accademico UAE**
+Basata sull'articolo:
 
 **Renewable energy and cryptocurrency: A dual approach to economic viability and environmental sustainability**
 **[Ali Hakimi, Mohammad-Mahdi Pazuki, Mohsen Salimi, Majid Amidpour]**
