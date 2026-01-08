@@ -6,6 +6,7 @@
 - **Mining Bitcoin** con stessa energia
 
 Basata su **paper accademico UAE**
+
 **Renewable energy and cryptocurrency: A dual approach to economic viability and environmental sustainability**
 **[Ali Hakimi, Mohammad-Mahdi Pazuki, Mohsen Salimi, Majid Amidpour]**
 
@@ -23,11 +24,13 @@ Basata su **paper accademico UAE**
 # 1. Clone/scarica
 
 git clone [link repo](https://github.com/danieleamato99/pv-mining-sim) pv-mining-sim
+
 cd pv-mining-sim
 
 # 2. Ambiente virtuale
 
 python -m venv venv
+
 source venv/bin/activate
 
 # 3. Installa
@@ -38,7 +41,7 @@ pip install -r requirements.txt
 
 mkdir data
 
-# Copia: pv_production.csv, BTC-USD.csv, difficulty.json, hash-rate.json in data/
+Copia: pv_production.csv, BTC-USD.csv, difficulty.json, hash-rate.json in data/
 
 # 5. Avvia
 
