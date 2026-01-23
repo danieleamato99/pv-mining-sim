@@ -22,7 +22,7 @@ class PVDataLoader:
     def load() -> Tuple[pd.DataFrame, float]:
         """Legge CSV e valida totale 80890 MWh."""
         df = pd.read_csv("data/pv_production.csv")
-        # Assumiamo colonna "energy_ac_mwh" dal dataset[file:2].
+        # Assumiamo colonna "energy_ac_mwh" dal dataset pv_production.csv
         total = df["energy_ac_mwh"].sum()
         if abs(total - const.PV_PARAMS.energia_base_2020_mwh) > 809:
             logger.warning("Totale PV mismatch paper (atteso 80890 MWh)")
