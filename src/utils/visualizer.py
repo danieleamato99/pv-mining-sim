@@ -35,22 +35,32 @@ class StreamlitVisualizer:
 
     def render_sidebar_params(self) -> Dict[str, float]:
         """Sidebar: input parametri -> aggiorna session state."""
-        st.sidebar.header("Parametri configurabili")
+        st.sidebar.header("Parametri Simulazione")
 
         col1, col2 = st.sidebar.columns(2)
+        # Disabilitati per futuri aggiornamenti
         with col1:
             capex = st.number_input(
-                "CAPEX $", value=int(st.session_state.capex), step=100000
+                "CAPEX $", value=int(st.session_state.capex), step=100000, disabled=True
             )
             opex = st.number_input(
-                "OPEX $/anno", value=int(st.session_state.opex), step=10000
+                "OPEX $/anno",
+                value=int(st.session_state.opex),
+                step=10000,
+                disabled=True,
             )
         with col2:
             prezzo = st.number_input(
-                "$/kWh", value=float(st.session_state.prezzo_kwh), step=0.001
+                "$/kWh",
+                value=float(st.session_state.prezzo_kwh),
+                step=0.001,
+                disabled=True,
             )
             co2 = st.number_input(
-                "CO₂ t/anno", value=int(st.session_state.co2_ton), step=1000
+                "CO₂ t/anno",
+                value=int(st.session_state.co2_ton),
+                step=1000,
+                disabled=True,
             )
 
         # Salva in session (persistente tra rerun Streamlit).
@@ -93,6 +103,7 @@ class StreamlitVisualizer:
             "ricavi_vendita_usd": "Ricavi vendita ($)",
             "opex_usd": "OPEX ($/anno)",
             "cashflow_annuo_usd": "CF annuo ($)",
+            "cashflow_cum_usd": "CF cumulato ($)",
         }
         df_pv_ui = dfs["vendita"].rename(columns=pv_cols)
 
@@ -104,6 +115,7 @@ class StreamlitVisualizer:
             "ricavi_usd": "Ricavi ($)",
             "opex_usd": "OPEX ($/anno)",
             "cashflow_annuo_usd": "CF annuo ($)",
+            "cashflow_cum_usd": "CF cumulato ($)",
         }
         df_mining_ui = dfs["mining"].rename(columns=mining_cols)
 
@@ -111,10 +123,18 @@ class StreamlitVisualizer:
         col1, col2 = st.columns(2)
         with col1:
             st.subheader("Vendita energia FV")
-            st.dataframe(df_pv_ui, use_container_width=True)
+            st.dataframe(
+                df_pv_ui,
+                use_container_width=True,
+                column_config={"Anno": st.column_config.NumberColumn(format="%d")}, # virgola delle migliaia dall'anno tolta
+            )
         with col2:
             st.subheader("Mining Bitcoin")
-            st.dataframe(df_mining_ui, use_container_width=True)
+            st.dataframe(
+                df_mining_ui,
+                use_container_width=True,
+                column_config={"Anno": st.column_config.NumberColumn(format="%d")},  # virgola delle migliaia dall'anno tolta
+            )
 
         # Grafico payback principale.
         st.header("Analisi Payback")
