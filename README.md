@@ -45,4 +45,4 @@ Copia: pv_production.csv, BTC-USD.csv, difficulty.json, hash-rate.json in data/
 
 # 5. Avvia
 
-streamlit run src/main.py
+streamlit run streamlit_app.py
