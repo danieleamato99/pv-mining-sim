@@ -77,7 +77,7 @@ class CashflowAnalyzer:
         fig.add_hline(y=0, line_dash="dash", line_color="red")
         fig.update_layout(
             title="Payback: Mining vs Vendita Energia FV",
-            xaxis_title="Anno (2020-2045)",
+            xaxis_title="Anno",
             yaxis_title="Cash Flow Cumulativo (USD)",
             template="plotly_white",
             width=900,
